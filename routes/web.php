@@ -13,25 +13,33 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/dashboard', 'ContactsController@index');
+
+    Route::get('/create', 'ContactsController@create');
+
+    Route::post('/store', 'ContactsController@store');
+
+    Route::get('/delete/{id}', 'ContactsController@delete');
+
+    Route::get('/edit/{id}', 'ContactsController@edit');
+
+    Route::put('/update/{id}', 'ContactsController@update');
+    
+
+    Route::get('/news', 'NewsController@index');
+
+    Route::get('/create-news', 'NewsController@create');
+
+    Route::post('/store-news', 'NewsController@store');
+
+    Route::get('/delete-news/{id}', 'NewsController@delete');
+
+    Route::get('/edit-news/{id}', 'NewsController@edit');
+
+    Route::get('/view-news/{id}', 'NewsController@view');
+
+    Route::put('/update-news/{id}', 'NewsController@update');
 });
-
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth'])->name('dashboard');
-
-Route::get('/dashboard', 'ContactsController@index')->middleware(['auth']);
-
-Route::get('/create', 'ContactsController@create')->middleware(['auth']);
-
-Route::post('/store', 'ContactsController@store')->middleware(['auth']);
-
-Route::get('/delete/{id}', 'ContactsController@delete')->middleware(['auth']);
-
-Route::get('/edit/{id}', 'ContactsController@edit')->middleware(['auth']);
-
-Route::put('/update/{id}', 'ContactsController@update')->middleware(['auth']);
-
 
 require __DIR__ . '/auth.php';

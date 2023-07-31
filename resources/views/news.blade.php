@@ -11,9 +11,9 @@
 
                 <div class="m-2">
                     <div class="d-flex">
-                        <h3>Lista de Contato</h3>
+                        <h3>Todas as noticias</h3>
                         &nbsp &nbsp
-                        <a class="btn btn-primary" href="{{ url('create') }}">Novo</a>
+                        <a class="btn btn-primary" href="{{ url('create-news') }}">Novo</a>
                     </div>
                 </div>
 
@@ -21,22 +21,19 @@
                     <thead>
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Nome</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Telefone</th>
+                            <th scope="col">Titulo</th>
                             <th scope="col">Ação</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($contacts as $item)
+                        @foreach($news as $item)
                         <tr>
                             <th scope="row">{{ $item->id }}</th>
-                            <td>{{ $item->name }}</td>
-                            <td>{{ $item->email }}</td>
-                            <td>{{ $item->phone }}</td>
+                            <td>{{ $item->title }}</td>
                             <td>
-                                <a class="btn btn-warning btn-sm" href="{{ url('edit', $item->id) }}">Editar</a>
-                                <a class="btn btn-danger btn-sm" href="{{ url('delete', $item->id) }}">Apagar</a>
+                                <a class="btn btn-warning btn-sm" href="{{ url('edit-news', $item->id) }}">Editar</a>
+                                <a class="btn btn-danger btn-sm" href="{{ url('delete-news', $item->id) }}">Apagar</a>
+                                <a class="btn btn-info btn-sm" href="{{ url('view-news', $item->id) }}">Visualizar</a>
                             </td>
                         </tr>
                         @endforeach

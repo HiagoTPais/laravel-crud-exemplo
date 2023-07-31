@@ -3,30 +3,35 @@
 @section('title', 'Crud')
 
 @section('content')
+
 <div class="py-12">
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
 
             <div class="p-6 bg-white border-b border-gray-200">
-                <h3>Editar Contato</h3>
-                <form action="{{ url('update', $contacts->id) }}" method="post">
+                <h3>Nova Noticia</h3>
+                <form action="{{ url('update-news', $news->id) }}" method="post" enctype="multipart/form-data">
                     @csrf
                     {{ method_field('PUT') }}
                     <div class="form-group">
-                        <label>Nome</label>
-                        <input type="text" required name="name" class="form-control" value="{{ $contacts->name }}">
+                        <label>Titulo</label>
+                        <input type="text" required name="title" class="form-control" value="{{ $news->title }}">
                     </div>
                     <div class="form-group">
-                        <label>Email</label>
-                        <input type="email" required name="email" class="form-control" value="{{ $contacts->email }}">
+                        <label>Conteúdo</label>
+                        <textarea class="form-control" name="text" required rows="6" cols="50">{{ $news->text }}</textarea>
                     </div>
                     <div class="form-group">
-                        <label>Telefone</label>
-                        <input type="tel" maxlength="15" onkeyup="handlePhone(event)" required name="phone" class="form-control" value="{{ $contacts->phone }}">
+                        <label>Imagem</label>
+                        <input type="file" name="img" class="form-control-file">
                     </div>
 
+                    <img src="{{ asset('/storage/images/' . $news->img) }}" width="100" height="100">
+                    <br>
+
                     <button type="submit" class="btn btn-primary">Submit</button>
-                    <a href="/dashboard" class="btn btn-secondary">Retornar</a>
+                    <a href="/news" class="btn btn-secondary">Retornar</a>
+
                 </form>
             </div>
         </div>

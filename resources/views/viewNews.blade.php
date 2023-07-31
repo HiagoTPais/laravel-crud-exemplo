@@ -3,31 +3,29 @@
 @section('title', 'Crud')
 
 @section('content')
+
 <div class="py-12">
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
 
             <div class="p-6 bg-white border-b border-gray-200">
-                <h3>Editar Contato</h3>
-                <form action="{{ url('update', $contacts->id) }}" method="post">
-                    @csrf
-                    {{ method_field('PUT') }}
-                    <div class="form-group">
-                        <label>Nome</label>
-                        <input type="text" required name="name" class="form-control" value="{{ $contacts->name }}">
-                    </div>
-                    <div class="form-group">
-                        <label>Email</label>
-                        <input type="email" required name="email" class="form-control" value="{{ $contacts->email }}">
-                    </div>
-                    <div class="form-group">
-                        <label>Telefone</label>
-                        <input type="tel" maxlength="15" onkeyup="handlePhone(event)" required name="phone" class="form-control" value="{{ $contacts->phone }}">
-                    </div>
 
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                    <a href="/dashboard" class="btn btn-secondary">Retornar</a>
-                </form>
+                <div class="d-flex justify-content-center">
+                    <h2>{{ $news->title }}</h2>
+                </div>
+
+                <br>
+
+                @foreach($news->text as $p)
+                <div class="d-flex">
+                    <p>{{ $p }}</p>
+                </div>
+                @endforeach
+
+                <div class="d-flex justify-content-center">
+                    <img src="{{ asset('/storage/images/' . $news->img) }}" width="500" height="500">
+                </div>
+
             </div>
         </div>
     </div>

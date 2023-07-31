@@ -11,7 +11,7 @@
 
 -> Copie o arquivo .env 
 
--> Execulte os comando abaixo em ordem:
+-> Execute os comandos abaixo em ordem:
 
 composer install
 
