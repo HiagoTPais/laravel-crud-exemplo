@@ -40,6 +40,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/view-news/{id}', 'NewsController@view');
 
     Route::put('/update-news/{id}', 'NewsController@update');
+
+    Route::get('/home', 'HomeController@index');
 });
 
 require __DIR__ . '/auth.php';

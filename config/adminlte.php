@@ -291,6 +291,11 @@ return [
 
     'menu' => [
         [
+            'text'       => 'Home',
+            'icon' => '',
+            'url'        => '/home',
+        ],
+        [
             'text'       => 'Contatos',
             'icon' => '',
             'url'        => '/dashboard',

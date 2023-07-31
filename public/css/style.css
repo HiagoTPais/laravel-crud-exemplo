@@ -1,0 +1,39 @@
+.preview {
+    display: flex;
+    border: 1px solid #c4c4c4;
+    border-radius: 15px;
+    margin: 15px;
+    width: 30%;
+}
+
+.preview img {
+    border-radius: 15px;
+}
+
+.preview div {
+    margin: 5px;
+    
+}
+
+.title a{
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+
+.title a:hover{
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+
+.text a {
+    text-decoration: none;
+    color: black;
+}
+
+
+.text a:hover {
+    text-decoration: none;
+    color: black;
+}

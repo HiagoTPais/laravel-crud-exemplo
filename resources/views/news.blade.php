@@ -11,7 +11,7 @@
 
                 <div class="m-2">
                     <div class="d-flex">
-                        <h3>Todas as noticias</h3>
+                        <h3>Lista de noticias</h3>
                         &nbsp &nbsp
                         <a class="btn btn-primary" href="{{ url('create-news') }}">Novo</a>
                     </div>
