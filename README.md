@@ -15,6 +15,8 @@
 
 composer install
 
+php artisan adminlte:install
+
 php artisan migrate
 
 npm install
